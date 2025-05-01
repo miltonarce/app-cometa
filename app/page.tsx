@@ -11,16 +11,31 @@ const mockBeers: IBeers = {
       name: 'Corona',
       price: 115,
       quantity: 2,
+      rating: 5,
     },
     {
       name: 'Quilmes',
       price: 120,
       quantity: 0,
+      rating: 1.5,
     },
     {
       name: 'Club Colombia',
       price: 110,
       quantity: 3,
+      rating: 3.5,
+    },
+    {
+      name: 'Heineken',
+      price: 200,
+      quantity: 10,
+      rating: 5,
+    },
+    {
+      name: 'Brahama',
+      price: 100,
+      quantity: 20,
+      rating: 1,
     },
   ],
 };
@@ -28,7 +43,7 @@ const mockBeers: IBeers = {
 export default function HomePage() {
   return (
     <main className="p-4 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Cervezas</h1>
+      <h1 className="text-2xl font-bold mb-4 text-red-500">Cervezas</h1>
       <BeerList beers={mockBeers.beers} />
       <OrderPopover />
     </main>
