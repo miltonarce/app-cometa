@@ -4,6 +4,7 @@ export interface IBeer {
   image?: string;
   rating?: number;
   quantity: number;
+  description?: string;
 }
 
 export interface IBeers {
@@ -30,7 +31,6 @@ export interface IOrder {
   subtotal: number;
   taxes: number;
   discounts: number;
-  items: IOrderItem[];
   rounds: IRound[];
 }
 

@@ -2,6 +2,18 @@ import { useState } from 'react';
 import { IBeer } from '@/types/index';
 import { useOrderStore } from '@/store/useOrderStore';
 import StarRating from '@/components/StarRating';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const backdropVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const popoverVariants = {
+  hidden: { opacity: 0, scale: 0.9, y: 40 },
+  visible: { opacity: 1, scale: 1, y: 0 },
+  exit: { opacity: 0, scale: 0.95, y: 20 },
+};
 
 const BeerDetailPopover = ({ beer, onClose }: { beer: IBeer; onClose: () => void }) => {
   const [quantity, setQuantity] = useState(1);
@@ -20,8 +32,22 @@ const BeerDetailPopover = ({ beer, onClose }: { beer: IBeer; onClose: () => void
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-      <div className="bg-white rounded-xl p-7 w-[90%] max-w-md shadow-lg relative text-gray-800">
+    <AnimatePresence>
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+      variants={backdropVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+    >
+      <motion.div
+        className="bg-white rounded-xl p-7 w-[90%] max-w-md shadow-lg relative text-gray-800"
+        variants={popoverVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        transition={{ duration: 0.25 }}
+      >
         <button
           onClick={onClose}
           className="absolute top-0.5 right-3 text-gray-500 text-xl font-semibold cursor-pointer"
@@ -43,12 +69,13 @@ const BeerDetailPopover = ({ beer, onClose }: { beer: IBeer; onClose: () => void
         </div>
 
         <p className="text-sm text-gray-500 leading-relaxed mb-3">
-          Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup
-          tinggi dengan mengutamakan diet yang sehat dan teratur.
+          {beer.description || 'No description available.'}
         </p>
 
         <p className="text-sm font-semibold mb-1">Ingredients:</p>
-        <p className="text-sm text-gray-500 mb-4">Seledri, telur, blueberry, madu.</p>
+        <p className="text-sm text-gray-500 mb-4">
+          Seledri, telur, blueberry, miel.
+        </p>
 
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm font-medium">Cantidad:</span>
@@ -80,8 +107,9 @@ const BeerDetailPopover = ({ beer, onClose }: { beer: IBeer; onClose: () => void
         >
           Ordenar ahora
         </button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
   );
 };
 

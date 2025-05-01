@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
+import { ToastProvider } from '@/context/ToastContext';
 
 export const metadata: Metadata = {
   title: 'BarApp',
@@ -18,7 +19,7 @@ export default function RootLayout({
         <header className="bg-white shadow-md py-4 px-6">
           <nav className="max-w-4xl mx-auto flex justify-between items-center">
             <h1 className="text-xl font-bold text-red-500 flex items-center space-x-2">
-              <span role="img" aria-label="cerveza">🍻</span>
+              <img src="/images/cometa-bar.png" alt="Logo" className="h-12 w-12" />
               <span>Cometa Bar</span>
             </h1>
             <div className="space-x-4">
@@ -39,11 +40,11 @@ export default function RootLayout({
         </header>
 
         <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6">
-          {children}
+          <ToastProvider>{children}</ToastProvider>
         </main>
 
         <footer className="bg-white border-t text-center text-sm text-gray-500 py-6 mt-10">
-          &copy; 2025 BarApp. Todos los derechos reservados.
+          &copy; 2025 Cometa Bar. Todos los derechos reservados.
         </footer>
       </body>
     </html>

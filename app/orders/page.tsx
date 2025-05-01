@@ -63,7 +63,7 @@ export default function OrdersPage() {
         </button>
       </div>
 
-      <OrderList orders={filteredOrders} showStatus={tab === 'past'} />
+      <OrderList orders={filteredOrders} showStatus/>
     </main>
   );
 }
