@@ -1,15 +1,21 @@
-import { Order } from '@/types/index';
+import { IOrder } from '@/types';
 import OrderCard from '@/components/Orders/OrderCard';
 
-const OrderList = ({ orders }: { orders: Order[] }) => {
+const OrderList = ({
+  orders,
+  showStatus,
+}: {
+  orders: IOrder[];
+  showStatus?: boolean;
+}) => {
   if (orders.length === 0) {
-    return <p className="text-muted-foreground">No hay órdenes registradas.</p>;
+    return <p className="text-gray-400 text-sm text-center">No hay órdenes registradas.</p>;
   }
 
   return (
-    <div>
-      {orders.map((order, i) => (
-        <OrderCard key={i} order={order} />
+    <div className="space-y-4">
+      {orders.map((order) => (
+        <OrderCard key={order.created} order={order} showStatus={showStatus} />
       ))}
     </div>
   );

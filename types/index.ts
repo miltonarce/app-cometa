@@ -1,14 +1,10 @@
-export type TRating = {
-  average: number;
-  reviews: number;
-};
-
 export interface IBeer {
   name: string;
   price: number;
   image?: string;
-  rating?: TRating;
+  rating?: number;
   quantity: number;
+  description?: string;
 }
 
 export interface IBeers {
@@ -35,7 +31,6 @@ export interface IOrder {
   subtotal: number;
   taxes: number;
   discounts: number;
-  items: IOrderItem[];
   rounds: IRound[];
 }
 
