@@ -1,6 +1,6 @@
 # Cometa App 🚀
 
-A modern web application built with **Next.js 15** and **React 19**, designed for performance, scalability, and ease of development.
+A modern web application built with **Next.js 15** and **React 19**, designed for Cometa by Milton Arce.
 
 ## 🚀 Tech Stack
 
@@ -80,4 +80,4 @@ These variables must be copied into `.env.local` with appropriate values.
 
 ## 🎥 Demo Video
 
-[▶️ Ver demo en Loom](https://www.loom.com/share/c713f3345cec4056b878673891d62728?sid=82aa4c1a-bc03-4082-89a4-0e90aeff2755)
+[▶️ Watch Loom Demo](https://www.loom.com/share/c713f3345cec4056b878673891d62728?sid=82aa4c1a-bc03-4082-89a4-0e90aeff2755)
