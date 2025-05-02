@@ -80,4 +80,4 @@ These variables must be copied into `.env.local` with appropriate values.
 
 ## 🎥 Demo Video
 
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/c713f3345cec4056b878673891d62728-with-play.gif)](https://www.loom.com/share/c713f3345cec4056b878673891d62728?sid=bfeecf4d-699d-438c-8bef-394b8e0ecb0f)
+[▶️ Ver demo en Loom](https://www.loom.com/share/c713f3345cec4056b878673891d62728?sid=82aa4c1a-bc03-4082-89a4-0e90aeff2755)
