@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cometa App 🚀
 
-## Getting Started
+A modern web application built with **Next.js 15** and **React 19**, designed for performance, scalability, and ease of development.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js 15** with Turbopack  
+- **React 19**  
+- **Zustand** for state management  
+- **Tailwind CSS** for styling  
+- **Framer Motion** for animations  
+- **Firebase** for backend services  
+- **Jest** & **React Testing Library** for testing  
+- **Husky** & **Lint-staged** for code quality  
+- **Prettier** & **ESLint** for formatting and linting  
+
+## 🛠 Getting Started
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <your-repo-url>
+cd app-cometa
+npm install
+```
+
+Copy the `.env.example` file to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+> ⚠️ `.env.example` includes all the required environment variables to run the app locally. Normally these files aren't versioned, but this one is included to simplify the setup process.
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✅ Running Tests
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run all tests:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test
+```
 
-## Learn More
+Run tests in watch mode:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run test:watch
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Useful Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev       # Start development server
+npm run build     # Build for production
+npm run start     # Start production server
+npm run lint      # Run ESLint
+npm run format    # Format code with Prettier
+```
 
-## Deploy on Vercel
+## 📄 Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Example contents of `.env.example`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
+
+These variables must be copied into `.env.local` with appropriate values.
+
+## 🎥 Demo Video
+
+[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/c713f3345cec4056b878673891d62728-with-play.gif)](https://www.loom.com/share/c713f3345cec4056b878673891d62728?sid=bfeecf4d-699d-438c-8bef-394b8e0ecb0f)
